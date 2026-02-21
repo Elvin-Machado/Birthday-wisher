@@ -13,7 +13,7 @@ today_date=(today.month,today.day)
 
 
 data=read_csv("birthdays.csv",dtype=object)
-data_dict={(data_row["month"],data_row["day"]):data_row for (index,data_row) in data.iterrows()}
+data_dict={(int(data_row["month"]),int(data_row["day"])):data_row for (index,data_row) in data.iterrows()}
 
 if today_date in data_dict:
     birthday_person=data_dict[today_date]
