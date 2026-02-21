@@ -25,7 +25,7 @@ if today_date in data_dict:
     with smtplib.SMTP("smtp.gmail.com",port=587) as connection:
            connection.starttls()
            connection.login(user=email,password=password)
-           connection.sendmail(from_addr=email,to_addrs=f"{birthday_person["email"]}",msg=f"Subject:Wishing Birthaday\n\n {content}")
+           connection.sendmail(from_addr=email,to_addrs=birthday_person["email"],msg=f"Subject:Wishing Birthaday\n\n {content}")
 
 
 
